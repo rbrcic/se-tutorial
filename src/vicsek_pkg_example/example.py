@@ -13,14 +13,18 @@ def test(num):
 
 plt.rcParams['animation.embed_limit'] = 300
 
-n = 200
-d = 0.01
-v = 0.01
-dt = 1
-eta = 0.1
+class Vicsek:
+    def __init__(self, n, d, v, dt, eta):
+        self.n = n # number of objects
+        self.d = d # radius of influence
+        self.v = v # velocity
+        self.dt = dt # time step
+        self.eta = eta # angle
 
-r = np.random.random((n, 2))
-theta = np.random.random(n)
+vicsek = Vicsek(200,0.01,0.01,1,0.1)
+
+r = np.random.random((vicsek.n, 2))
+theta = np.random.random(vicsek.n)
 
 fig, ax = plt.subplots(figsize=(6, 6))
 
@@ -90,7 +94,7 @@ def animate(frame):
     u = []
     vv = []
 
-    for i in range(n):
+    for i in range(vicsek.n):
         x.append(r[i, 0])
         y.append(r[i, 1])
         u.append(np.cos(2 * np.pi * theta[i]))
