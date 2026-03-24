@@ -49,14 +49,14 @@ running = True  # whether animation is running
 def update_model():
     global r, theta, counter
     if running:
-        for i in range(n):
+        for i in range(vicsek.n):
             sum_sin = 0
             sum_cos = 0
             neighbours = 0
 
-            for j in range(n):
+            for j in range(vicsek.n):
                 if i != j:
-                    if distance(r[i], r[j]) < d:
+                    if distance(r[i], r[j]) < vicsek.d:
                         theta_j = 2 * np.pi * theta[j]
                         sum_sin = sum_sin + np.sin(theta_j)
                         sum_cos = sum_cos + np.cos(theta_j)
@@ -64,10 +64,10 @@ def update_model():
 
             if neighbours > 0:
                 avg_theta = np.arctan2(sum_sin / neighbours, sum_cos / neighbours)
-                theta[i] = (avg_theta / (2 * np.pi)) + eta * (np.random.rand() - 0.5)
+                theta[i] = (avg_theta / (2 * np.pi)) + vicsek.eta * (np.random.rand() - 0.5)
 
-            dx = v * dt * np.cos(2 * np.pi * theta[i])
-            dy = v * dt * np.sin(2 * np.pi * theta[i])
+            dx = vicsek.v * vicsek.dt * np.cos(2 * np.pi * theta[i])
+            dy = vicsek.v * vicsek.dt * np.sin(2 * np.pi * theta[i])
 
             r[i, 0] = r[i, 0] + dx
             r[i, 1] = r[i, 1] + dy
