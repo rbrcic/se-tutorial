@@ -20,6 +20,10 @@ class Vicsek:
         self.v = v # velocity
         self.dt = dt # time step
         self.eta = eta # angle
+    
+    @staticmethod
+    def distance(p1, p2):
+        return np.sqrt(((p1 - p2) ** 2).sum())
 
 vicsek = Vicsek(200,0.01,0.01,1,0.1)
 
@@ -41,8 +45,6 @@ ax.set_title("Vicsek Model")
 counter = 0
 
 
-def distance(p1, p2):
-    return np.sqrt(((p1 - p2) ** 2).sum())
 # --- Control variables ---
 running = True  # whether animation is running
 
@@ -56,7 +58,7 @@ def update_model():
 
             for j in range(vicsek.n):
                 if i != j:
-                    if distance(r[i], r[j]) < vicsek.d:
+                    if Vicsek.distance(r[i], r[j]) < vicsek.d:
                         theta_j = 2 * np.pi * theta[j]
                         sum_sin = sum_sin + np.sin(theta_j)
                         sum_cos = sum_cos + np.cos(theta_j)
