@@ -1,0 +1,1119 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="pdoc 16.0.0"/>
+    <title>vicsek_pkg_example.example_modified API documentation</title>
+
+    <style>/*! * Bootstrap Reboot v5.0.0 (https://getbootstrap.com/) * Copyright 2011-2021 The Bootstrap Authors * Copyright 2011-2021 Twitter, Inc. * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE) * Forked from Normalize.css, licensed MIT (https://github.com/necolas/normalize.css/blob/master/LICENSE.md) */*,::after,::before{box-sizing:border-box}@media (prefers-reduced-motion:no-preference){:root{scroll-behavior:smooth}}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:1rem;font-weight:400;line-height:1.5;color:#212529;background-color:#fff;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}hr{margin:1rem 0;color:inherit;background-color:currentColor;border:0;opacity:.25}hr:not([size]){height:1px}h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:.5rem;font-weight:500;line-height:1.2}h1{font-size:calc(1.375rem + 1.5vw)}@media (min-width:1200px){h1{font-size:2.5rem}}h2{font-size:calc(1.325rem + .9vw)}@media (min-width:1200px){h2{font-size:2rem}}h3{font-size:calc(1.3rem + .6vw)}@media (min-width:1200px){h3{font-size:1.75rem}}h4{font-size:calc(1.275rem + .3vw)}@media (min-width:1200px){h4{font-size:1.5rem}}h5{font-size:1.25rem}h6{font-size:1rem}p{margin-top:0;margin-bottom:1rem}abbr[data-bs-original-title],abbr[title]{-webkit-text-decoration:underline dotted;text-decoration:underline dotted;cursor:help;-webkit-text-decoration-skip-ink:none;text-decoration-skip-ink:none}address{margin-bottom:1rem;font-style:normal;line-height:inherit}ol,ul{padding-left:2rem}dl,ol,ul{margin-top:0;margin-bottom:1rem}ol ol,ol ul,ul ol,ul ul{margin-bottom:0}dt{font-weight:700}dd{margin-bottom:.5rem;margin-left:0}blockquote{margin:0 0 1rem}b,strong{font-weight:bolder}small{font-size:.875em}mark{padding:.2em;background-color:#fcf8e3}sub,sup{position:relative;font-size:.75em;line-height:0;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}a{color:#0d6efd;text-decoration:underline}a:hover{color:#0a58ca}a:not([href]):not([class]),a:not([href]):not([class]):hover{color:inherit;text-decoration:none}code,kbd,pre,samp{font-family:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;font-size:1em;direction:ltr;unicode-bidi:bidi-override}pre{display:block;margin-top:0;margin-bottom:1rem;overflow:auto;font-size:.875em}pre code{font-size:inherit;color:inherit;word-break:normal}code{font-size:.875em;color:#d63384;word-wrap:break-word}a>code{color:inherit}kbd{padding:.2rem .4rem;font-size:.875em;color:#fff;background-color:#212529;border-radius:.2rem}kbd kbd{padding:0;font-size:1em;font-weight:700}figure{margin:0 0 1rem}img,svg{vertical-align:middle}table{caption-side:bottom;border-collapse:collapse}caption{padding-top:.5rem;padding-bottom:.5rem;color:#6c757d;text-align:left}th{text-align:inherit;text-align:-webkit-match-parent}tbody,td,tfoot,th,thead,tr{border-color:inherit;border-style:solid;border-width:0}label{display:inline-block}button{border-radius:0}button:focus:not(:focus-visible){outline:0}button,input,optgroup,select,textarea{margin:0;font-family:inherit;font-size:inherit;line-height:inherit}button,select{text-transform:none}[role=button]{cursor:pointer}select{word-wrap:normal}select:disabled{opacity:1}[list]::-webkit-calendar-picker-indicator{display:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]:not(:disabled),[type=reset]:not(:disabled),[type=submit]:not(:disabled),button:not(:disabled){cursor:pointer}::-moz-focus-inner{padding:0;border-style:none}textarea{resize:vertical}fieldset{min-width:0;padding:0;margin:0;border:0}legend{float:left;width:100%;padding:0;margin-bottom:.5rem;font-size:calc(1.275rem + .3vw);line-height:inherit}@media (min-width:1200px){legend{font-size:1.5rem}}legend+*{clear:left}::-webkit-datetime-edit-day-field,::-webkit-datetime-edit-fields-wrapper,::-webkit-datetime-edit-hour-field,::-webkit-datetime-edit-minute,::-webkit-datetime-edit-month-field,::-webkit-datetime-edit-text,::-webkit-datetime-edit-year-field{padding:0}::-webkit-inner-spin-button{height:auto}[type=search]{outline-offset:-2px;-webkit-appearance:textfield}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-color-swatch-wrapper{padding:0}::file-selector-button{font:inherit}::-webkit-file-upload-button{font:inherit;-webkit-appearance:button}output{display:inline-block}iframe{border:0}summary{display:list-item;cursor:pointer}progress{vertical-align:baseline}[hidden]{display:none!important}</style>
+    <style>/*! syntax-highlighting.css */pre{line-height:125%;}span.linenos{color:inherit; background-color:transparent; padding-left:5px; padding-right:20px;}.pdoc-code .hll{background-color:#ffffcc}.pdoc-code{background:#f8f8f8;}.pdoc-code .c{color:#3D7B7B; font-style:italic}.pdoc-code .err{border:1px solid #FF0000}.pdoc-code .k{color:#008000; font-weight:bold}.pdoc-code .o{color:#666666}.pdoc-code .ch{color:#3D7B7B; font-style:italic}.pdoc-code .cm{color:#3D7B7B; font-style:italic}.pdoc-code .cp{color:#9C6500}.pdoc-code .cpf{color:#3D7B7B; font-style:italic}.pdoc-code .c1{color:#3D7B7B; font-style:italic}.pdoc-code .cs{color:#3D7B7B; font-style:italic}.pdoc-code .gd{color:#A00000}.pdoc-code .ge{font-style:italic}.pdoc-code .gr{color:#E40000}.pdoc-code .gh{color:#000080; font-weight:bold}.pdoc-code .gi{color:#008400}.pdoc-code .go{color:#717171}.pdoc-code .gp{color:#000080; font-weight:bold}.pdoc-code .gs{font-weight:bold}.pdoc-code .gu{color:#800080; font-weight:bold}.pdoc-code .gt{color:#0044DD}.pdoc-code .kc{color:#008000; font-weight:bold}.pdoc-code .kd{color:#008000; font-weight:bold}.pdoc-code .kn{color:#008000; font-weight:bold}.pdoc-code .kp{color:#008000}.pdoc-code .kr{color:#008000; font-weight:bold}.pdoc-code .kt{color:#B00040}.pdoc-code .m{color:#666666}.pdoc-code .s{color:#BA2121}.pdoc-code .na{color:#687822}.pdoc-code .nb{color:#008000}.pdoc-code .nc{color:#0000FF; font-weight:bold}.pdoc-code .no{color:#880000}.pdoc-code .nd{color:#AA22FF}.pdoc-code .ni{color:#717171; font-weight:bold}.pdoc-code .ne{color:#CB3F38; font-weight:bold}.pdoc-code .nf{color:#0000FF}.pdoc-code .nl{color:#767600}.pdoc-code .nn{color:#0000FF; font-weight:bold}.pdoc-code .nt{color:#008000; font-weight:bold}.pdoc-code .nv{color:#19177C}.pdoc-code .ow{color:#AA22FF; font-weight:bold}.pdoc-code .w{color:#bbbbbb}.pdoc-code .mb{color:#666666}.pdoc-code .mf{color:#666666}.pdoc-code .mh{color:#666666}.pdoc-code .mi{color:#666666}.pdoc-code .mo{color:#666666}.pdoc-code .sa{color:#BA2121}.pdoc-code .sb{color:#BA2121}.pdoc-code .sc{color:#BA2121}.pdoc-code .dl{color:#BA2121}.pdoc-code .sd{color:#BA2121; font-style:italic}.pdoc-code .s2{color:#BA2121}.pdoc-code .se{color:#AA5D1F; font-weight:bold}.pdoc-code .sh{color:#BA2121}.pdoc-code .si{color:#A45A77; font-weight:bold}.pdoc-code .sx{color:#008000}.pdoc-code .sr{color:#A45A77}.pdoc-code .s1{color:#BA2121}.pdoc-code .ss{color:#19177C}.pdoc-code .bp{color:#008000}.pdoc-code .fm{color:#0000FF}.pdoc-code .vc{color:#19177C}.pdoc-code .vg{color:#19177C}.pdoc-code .vi{color:#19177C}.pdoc-code .vm{color:#19177C}.pdoc-code .il{color:#666666}</style>
+    <style>/*! theme.css */:root{--pdoc-background:#fff;}.pdoc{--text:#212529;--muted:#6c757d;--link:#3660a5;--link-hover:#1659c5;--code:#f8f8f8;--active:#fff598;--accent:#eee;--accent2:#c1c1c1;--nav-hover:rgba(255, 255, 255, 0.5);--name:#0066BB;--def:#008800;--annotation:#007020;}</style>
+    <style>/*! layout.css */html, body{width:100%;height:100%;}html, main{scroll-behavior:smooth;}body{background-color:var(--pdoc-background);}@media (max-width:769px){#navtoggle{cursor:pointer;position:absolute;width:50px;height:40px;top:1rem;right:1rem;border-color:var(--text);color:var(--text);display:flex;opacity:0.8;z-index:999;}#navtoggle:hover{opacity:1;}#togglestate + div{display:none;}#togglestate:checked + div{display:inherit;}main, header{padding:2rem 3vw;}header + main{margin-top:-3rem;}.git-button{display:none !important;}nav input[type="search"]{max-width:77%;}nav input[type="search"]:first-child{margin-top:-6px;}nav input[type="search"]:valid ~ *{display:none !important;}}@media (min-width:770px){:root{--sidebar-width:clamp(12.5rem, 28vw, 22rem);}nav{position:fixed;overflow:auto;height:100vh;width:var(--sidebar-width);}main, header{padding:3rem 2rem 3rem calc(var(--sidebar-width) + 3rem);width:calc(54rem + var(--sidebar-width));max-width:100%;}header + main{margin-top:-4rem;}#navtoggle{display:none;}}#togglestate{position:absolute;height:0;opacity:0;}nav.pdoc{--pad:clamp(0.5rem, 2vw, 1.75rem);--indent:1.5rem;background-color:var(--accent);border-right:1px solid var(--accent2);box-shadow:0 0 20px rgba(50, 50, 50, .2) inset;padding:0 0 0 var(--pad);overflow-wrap:anywhere;scrollbar-width:thin; scrollbar-color:var(--accent2) transparent; z-index:1}nav.pdoc::-webkit-scrollbar{width:.4rem; }nav.pdoc::-webkit-scrollbar-thumb{background-color:var(--accent2); }nav.pdoc > div{padding:var(--pad) 0;}nav.pdoc .module-list-button{display:inline-flex;align-items:center;color:var(--text);border-color:var(--muted);margin-bottom:1rem;}nav.pdoc .module-list-button:hover{border-color:var(--text);}nav.pdoc input[type=search]{display:block;outline-offset:0;width:calc(100% - var(--pad));}nav.pdoc .logo{max-width:calc(100% - var(--pad));max-height:35vh;display:block;margin:0 auto 1rem;transform:translate(calc(-.5 * var(--pad)), 0);}nav.pdoc ul{list-style:none;padding-left:0;}nav.pdoc > div > ul{margin-left:calc(0px - var(--pad));}nav.pdoc li a{padding:.2rem 0 .2rem calc(var(--pad) + var(--indent));}nav.pdoc > div > ul > li > a{padding-left:var(--pad);}nav.pdoc li{transition:all 100ms;}nav.pdoc li:hover{background-color:var(--nav-hover);}nav.pdoc a, nav.pdoc a:hover{color:var(--text);}nav.pdoc a{display:block;}nav.pdoc > h2:first-of-type{margin-top:1.5rem;}nav.pdoc .class:before{content:"class ";color:var(--muted);}nav.pdoc .function:after{content:"()";color:var(--muted);}nav.pdoc footer:before{content:"";display:block;width:calc(100% - var(--pad));border-top:solid var(--accent2) 1px;margin-top:1.5rem;padding-top:.5rem;}nav.pdoc footer{font-size:small;}</style>
+    <style>/*! content.css */.pdoc{color:var(--text);box-sizing:border-box;line-height:1.5;background:none;}.pdoc .pdoc-button{cursor:pointer;display:inline-block;border:solid black 1px;border-radius:2px;font-size:.75rem;padding:calc(0.5em - 1px) 1em;transition:100ms all;}.pdoc .alert{padding:1rem 1rem 1rem calc(1.5rem + 24px);border:1px solid transparent;border-radius:.25rem;background-repeat:no-repeat;background-position:.75rem center;margin-bottom:1rem;}.pdoc .alert > em{display:none;}.pdoc .alert > *:last-child{margin-bottom:0;}.pdoc .alert.note{color:#084298;background-color:#cfe2ff;border-color:#b6d4fe;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22%23084298%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M8%2016A8%208%200%201%200%208%200a8%208%200%200%200%200%2016zm.93-9.412-1%204.705c-.07.34.029.533.304.533.194%200%20.487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703%200-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381%202.29-.287zM8%205.5a1%201%200%201%201%200-2%201%201%200%200%201%200%202z%22/%3E%3C/svg%3E");}.pdoc .alert.tip{color:#0a3622;background-color:#d1e7dd;border-color:#a3cfbb;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22%230a3622%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M2%206a6%206%200%201%201%2010.174%204.31c-.203.196-.359.4-.453.619l-.762%201.769A.5.5%200%200%201%2010.5%2013a.5.5%200%200%201%200%201%20.5.5%200%200%201%200%201l-.224.447a1%201%200%200%201-.894.553H6.618a1%201%200%200%201-.894-.553L5.5%2015a.5.5%200%200%201%200-1%20.5.5%200%200%201%200-1%20.5.5%200%200%201-.46-.302l-.761-1.77a2%202%200%200%200-.453-.618A5.98%205.98%200%200%201%202%206m6-5a5%205%200%200%200-3.479%208.592c.263.254.514.564.676.941L5.83%2012h4.342l.632-1.467c.162-.377.413-.687.676-.941A5%205%200%200%200%208%201%22/%3E%3C/svg%3E");}.pdoc .alert.important{color:#055160;background-color:#cff4fc;border-color:#9eeaf9;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22%23055160%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M2%200a2%202%200%200%200-2%202v12a2%202%200%200%200%202%202h12a2%202%200%200%200%202-2V2a2%202%200%200%200-2-2zm6%204c.535%200%20.954.462.9.995l-.35%203.507a.552.552%200%200%201-1.1%200L7.1%204.995A.905.905%200%200%201%208%204m.002%206a1%201%200%201%201%200%202%201%201%200%200%201%200-2%22/%3E%3C/svg%3E");}.pdoc .alert.warning{color:#664d03;background-color:#fff3cd;border-color:#ffecb5;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22%23664d03%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M8.982%201.566a1.13%201.13%200%200%200-1.96%200L.165%2013.233c-.457.778.091%201.767.98%201.767h13.713c.889%200%201.438-.99.98-1.767L8.982%201.566zM8%205c.535%200%20.954.462.9.995l-.35%203.507a.552.552%200%200%201-1.1%200L7.1%205.995A.905.905%200%200%201%208%205zm.002%206a1%201%200%201%201%200%202%201%201%200%200%201%200-2z%22/%3E%3C/svg%3E");}.pdoc .alert.caution{color:#842029;background-color:#f8d7da;border-color:#f5c2c7;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22%23842029%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M11.46.146A.5.5%200%200%200%2011.107%200H4.893a.5.5%200%200%200-.353.146L.146%204.54A.5.5%200%200%200%200%204.893v6.214a.5.5%200%200%200%20.146.353l4.394%204.394a.5.5%200%200%200%20.353.146h6.214a.5.5%200%200%200%20.353-.146l4.394-4.394a.5.5%200%200%200%20.146-.353V4.893a.5.5%200%200%200-.146-.353zM8%204c.535%200%20.954.462.9.995l-.35%203.507a.552.552%200%200%201-1.1%200L7.1%204.995A.905.905%200%200%201%208%204m.002%206a1%201%200%201%201%200%202%201%201%200%200%201%200-2%22/%3E%3C/svg%3E");}.pdoc .alert.danger{color:#842029;background-color:#f8d7da;border-color:#f5c2c7;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22%23842029%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M5.52.359A.5.5%200%200%201%206%200h4a.5.5%200%200%201%20.474.658L8.694%206H12.5a.5.5%200%200%201%20.395.807l-7%209a.5.5%200%200%201-.873-.454L6.823%209.5H3.5a.5.5%200%200%201-.48-.641l2.5-8.5z%22/%3E%3C/svg%3E");}.pdoc .visually-hidden{position:absolute !important;width:1px !important;height:1px !important;padding:0 !important;margin:-1px !important;overflow:hidden !important;clip:rect(0, 0, 0, 0) !important;white-space:nowrap !important;border:0 !important;}.pdoc h1, .pdoc h2, .pdoc h3{font-weight:300;margin:.3em 0;padding:.2em 0;}.pdoc > section:not(.module-info) h1{font-size:1.5rem;font-weight:500;}.pdoc > section:not(.module-info) h2{font-size:1.4rem;font-weight:500;}.pdoc > section:not(.module-info) h3{font-size:1.3rem;font-weight:500;}.pdoc > section:not(.module-info) h4{font-size:1.2rem;}.pdoc > section:not(.module-info) h5{font-size:1.1rem;}.pdoc a{text-decoration:none;color:var(--link);}.pdoc a:hover{color:var(--link-hover);}.pdoc blockquote{margin-left:2rem;}.pdoc pre{border-top:1px solid var(--accent2);border-bottom:1px solid var(--accent2);margin-top:0;margin-bottom:1em;padding:.5rem 0 .5rem .5rem;overflow-x:auto;background-color:var(--code);}.pdoc code{color:var(--text);padding:.2em .4em;margin:0;font-size:85%;background-color:var(--accent);border-radius:6px;}.pdoc a > code{color:inherit;}.pdoc pre > code{display:inline-block;font-size:inherit;background:none;border:none;padding:0;}.pdoc > section:not(.module-info){margin-bottom:1.5rem;}.pdoc .modulename{margin-top:0;font-weight:bold;}.pdoc .modulename a{color:var(--link);transition:100ms all;}.pdoc .git-button{float:right;border:solid var(--link) 1px;}.pdoc .git-button:hover{background-color:var(--link);color:var(--pdoc-background);}.view-source-toggle-state,.view-source-toggle-state ~ .pdoc-code{display:none;}.view-source-toggle-state:checked ~ .pdoc-code{display:block;}.view-source-button{display:inline-block;float:right;font-size:.75rem;line-height:1.5rem;color:var(--muted);padding:0 .4rem 0 1.3rem;cursor:pointer;text-indent:-2px;}.view-source-button > span{visibility:hidden;}.module-info .view-source-button{float:none;display:flex;justify-content:flex-end;margin:-1.2rem .4rem -.2rem 0;}.view-source-button::before{position:absolute;content:"View Source";display:list-item;list-style-type:disclosure-closed;}.view-source-toggle-state:checked ~ .attr .view-source-button::before,.view-source-toggle-state:checked ~ .view-source-button::before{list-style-type:disclosure-open;}.pdoc .docstring{margin-bottom:1.5rem;}.pdoc section:not(.module-info) .docstring{margin-left:clamp(0rem, 5vw - 2rem, 1rem);}.pdoc .docstring .pdoc-code{margin-left:1em;margin-right:1em;}.pdoc h1:target,.pdoc h2:target,.pdoc h3:target,.pdoc h4:target,.pdoc h5:target,.pdoc h6:target,.pdoc .pdoc-code > pre > span:target{background-color:var(--active);box-shadow:-1rem 0 0 0 var(--active);}.pdoc .pdoc-code > pre > span:target{display:block;}.pdoc div:target > .attr,.pdoc section:target > .attr,.pdoc dd:target > a{background-color:var(--active);}.pdoc *{scroll-margin:2rem;}.pdoc .pdoc-code .linenos{user-select:none;}.pdoc .attr:hover{filter:contrast(0.95);}.pdoc section, .pdoc .classattr{position:relative;}.pdoc .headerlink{--width:clamp(1rem, 3vw, 2rem);position:absolute;top:0;left:calc(0rem - var(--width));transition:all 100ms ease-in-out;opacity:0;}.pdoc .headerlink::before{content:"#";display:block;text-align:center;width:var(--width);height:2.3rem;line-height:2.3rem;font-size:1.5rem;}.pdoc .attr:hover ~ .headerlink,.pdoc *:target > .headerlink,.pdoc .headerlink:hover{opacity:1;}.pdoc .attr{display:block;margin:.5rem 0 .5rem;padding:.4rem .4rem .4rem 1rem;background-color:var(--accent);overflow-x:auto;}.pdoc .classattr{margin-left:2rem;}.pdoc .decorator-deprecated{color:#842029;}.pdoc .decorator-deprecated ~ span{filter:grayscale(1) opacity(0.8);}.pdoc .name{color:var(--name);font-weight:bold;}.pdoc .def{color:var(--def);font-weight:bold;}.pdoc .signature{background-color:transparent;}.pdoc .param, .pdoc .return-annotation{white-space:pre;}.pdoc .signature.multiline .param{display:block;}.pdoc .signature.condensed .param{display:inline-block;}.pdoc .annotation{color:var(--annotation);}.pdoc .view-value-toggle-state,.pdoc .view-value-toggle-state ~ .default_value{display:none;}.pdoc .view-value-toggle-state:checked ~ .default_value{display:inherit;}.pdoc .view-value-button{font-size:.5rem;vertical-align:middle;border-style:dashed;margin-top:-0.1rem;}.pdoc .view-value-button:hover{background:white;}.pdoc .view-value-button::before{content:"show";text-align:center;width:2.2em;display:inline-block;}.pdoc .view-value-toggle-state:checked ~ .view-value-button::before{content:"hide";}.pdoc .inherited{margin-left:2rem;}.pdoc .inherited dt{font-weight:700;}.pdoc .inherited dt, .pdoc .inherited dd{display:inline;margin-left:0;margin-bottom:.5rem;}.pdoc .inherited dd:not(:last-child):after{content:", ";}.pdoc .inherited .class:before{content:"class ";}.pdoc .inherited .function a:after{content:"()";}.pdoc .search-result .docstring{overflow:auto;max-height:25vh;}.pdoc .search-result.focused > .attr{background-color:var(--active);}.pdoc .attribution{margin-top:2rem;display:block;opacity:0.5;transition:all 200ms;filter:grayscale(100%);}.pdoc .attribution:hover{opacity:1;filter:grayscale(0%);}.pdoc .attribution img{margin-left:5px;height:27px;vertical-align:bottom;width:50px;transition:all 200ms;}.pdoc table{display:block;width:max-content;max-width:100%;overflow:auto;margin-bottom:1rem;}.pdoc table th{font-weight:600;}.pdoc table th, .pdoc table td{padding:6px 13px;border:1px solid var(--accent2);}</style>
+    <style>/*! custom.css */</style></head>
+<body>
+    <nav class="pdoc">
+        <label id="navtoggle" for="togglestate" class="pdoc-button"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke-linecap='round' stroke="currentColor" stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg></label>
+        <input id="togglestate" type="checkbox" aria-hidden="true" tabindex="-1">
+        <div>            <a class="pdoc-button module-list-button" href="../vicsek_pkg_example.html">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-left" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M10 3.5a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 1 1 0v2A1.5 1.5 0 0 1 9.5 14h-8A1.5 1.5 0 0 1 0 12.5v-9A1.5 1.5 0 0 1 1.5 2h8A1.5 1.5 0 0 1 11 3.5v2a.5.5 0 0 1-1 0v-2z"/>
+  <path fill-rule="evenodd" d="M4.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H14.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
+</svg>                &nbsp;vicsek_pkg_example</a>
+
+
+            <input type="search" placeholder="Search..." role="searchbox" aria-label="search"
+                   pattern=".+" required>
+
+
+
+            <h2>API Documentation</h2>
+                <ul class="memberlist">
+            <li>
+                    <a class="variable" href="#n">n</a>
+            </li>
+            <li>
+                    <a class="variable" href="#r_interact">r_interact</a>
+            </li>
+            <li>
+                    <a class="variable" href="#v">v</a>
+            </li>
+            <li>
+                    <a class="variable" href="#eta">eta</a>
+            </li>
+            <li>
+                    <a class="variable" href="#dt">dt</a>
+            </li>
+            <li>
+                    <a class="variable" href="#pos">pos</a>
+            </li>
+            <li>
+                    <a class="variable" href="#theta">theta</a>
+            </li>
+            <li>
+                    <a class="variable" href="#q">q</a>
+            </li>
+            <li>
+                    <a class="function" href="#update_model">update_model</a>
+            </li>
+            <li>
+                    <a class="function" href="#animate">animate</a>
+            </li>
+            <li>
+                    <a class="variable" href="#ani">ani</a>
+            </li>
+    </ul>
+
+
+
+        <a class="attribution" title="pdoc: Python API documentation generator" href="https://pdoc.dev" target="_blank">
+            built with <span class="visually-hidden">pdoc</span><img
+                alt="pdoc logo"
+                src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20role%3D%22img%22%20aria-label%3D%22pdoc%20logo%22%20width%3D%22300%22%20height%3D%22160%22%20viewBox%3D%220%200%20150%2080%22%3E%3Ctitle%3Epdoc%3C/title%3E%3Cpath%20d%3D%22M132.316%2048.886c.276-4.679%202.342-6.698%204.409-7.982s4.27-1.165%206.751-1.055c1.586.07%203.044.156%204.222-.482%201.142-.619%202.026-1.932%202.162-3.739.268-3.576-1.929-5.368-5.006-5.551s-7.599.524-10.517%201.606c-4.455%201.652-8.588%206.606-9.552%208.992s-2.342%206.193-1.745%2010.873%202.664%209.221%205.878%2011.79%205.878%203.808%2010.103%204.312%203.444.229%206.062.229%205.006-2.202%204.914-4.909-2.296-5.001-4.501-4.863-3.077.505-5.281.229-7.715-2.064-7.899-9.451z%22%20fill%3D%22%23198754%22/%3E%3Ccircle%20cx%3D%22101.504%22%20cy%3D%2248.943%22%20r%3D%2214.208%22%20fill%3D%22none%22%20stroke%3D%22%23198754%22%20stroke-width%3D%229.354%22/%3E%3Cpath%20d%3D%22M87.81.002c-3.637.065-5.001.454-7.014%201.232s-3.443%201.363-6.3%204.282c-1.723%201.76-3.148%205.019-3.776%207.329-.413%201.521-.316%202.63-.316%202.63l-.195%2034.612c.065%205.774-6.755%208.305-9.612%208.37s-9.678-1.038-9.743-9.408%207.128-9.521%208.362-9.521c1.413-.13%202.526-.021%203.718-.016%202.071.009%204.157-.778%204.092-4.671s-4.157-4.736-4.157-4.736c-6.3-.843-11.43%202.206-11.43%202.206S40.917%2038.15%2041.372%2049.634%2051.568%2068.19%2061.311%2068.125s18.316-7.007%2018.445-17.193l.13-22.772c.046-2.291%202.683-3.644%204.476-4.203.745-.232%201.694-.274%201.694-.274l10.457-.13s4.871-.324%207.729-3.114%204.352-6.294%204.352-6.294.974-3.049.13-4.606-.195-1.233-2.792-3.309-8.573-4.477-8.573-4.477S91.447-.063%2087.81.002zM0%2047.169l.065%2028.417S0%2080.127%204.481%2079.997s5.072-3.866%205.049-4.152l-.113-28.482s1.624-7.656%209.937-7.721%2010.002%206.942%2010.002%208.499-.909%2010.51-9.093%2010.51c-.948%200-2.99-.567-4.145-.272-3.919%201-3.194%204.554-3.194%204.554s.065%205.061%207.404%204.996%2018.575-6.034%2018.575-19.074S26.953%2030.04%2019.549%2029.91%201.234%2035.296%200%2047.169z%22%20fill%3D%22%23198754%22/%3E%3Cg%20transform%3D%22matrix%28.325601%200%200%20.325256%20-10.32669%20-45.802786%29%22%3E%3Ccircle%20cx%3D%22297.554%22%20cy%3D%22172.286%22%20r%3D%2216.5%22%20fill%3D%22%23fff%22/%3E%3Cellipse%20cx%3D%22297.709%22%20cy%3D%22172.642%22%20rx%3D%2211.071%22%20ry%3D%2210.871%22%20fill%3D%22%23105a48%22/%3E%3Ccircle%20cx%3D%22304.104%22%20cy%3D%22167.667%22%20r%3D%224.5%22%20fill%3D%22%23fff%22/%3E%3C/g%3E%3Cpath%20d%3D%22M94.661%2017.032l.893-1.476s.99.714%201.916.925%201.575.114%202.955.114l14.565-.162c1.283-.032%203.085-.762%203.02-3.293s-.373-3.503-.373-3.503l1.283-.487s.52.503.877%201.573.309%201.995.292%202.66-.227%201.541-.227%201.541%201.564-.308%202.359-1.038.823-.779%201.489-1.508.812-.86.812-.86.552-.13.877.26.341.957.065%201.46-1.672%202.206-3.247%203.066-2.76%201.427-3.929%201.768-3.848.73-7.063.714l-10.944-.114s-2.143-.081-3.02-.373-2.241-.973-2.598-1.265z%22%20fill%3D%22%23d36d49%22/%3E%3Cg%20fill%3D%22%23105a48%22%3E%3Cellipse%20cx%3D%2293.052%22%20cy%3D%2243.567%22%20rx%3D%22.869%22%20ry%3D%221.014%22%20transform%3D%22rotate%28341.022%29%22/%3E%3Cellipse%20cx%3D%22104.3%22%20cy%3D%22-16.184%22%20rx%3D%22.865%22%20ry%3D%221.009%22%20transform%3D%22rotate%2814.786%29%22/%3E%3C/g%3E%3C/svg%3E"/>
+        </a>
+</div>
+    </nav>
+    <main class="pdoc">
+            <section class="module-info">
+                    <h1 class="modulename">
+<a href="./../vicsek_pkg_example.html">vicsek_pkg_example</a><wbr>.example_modified    </h1>
+
+                
+                        <input id="mod-example_modified-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+
+                        <label class="view-source-button" for="mod-example_modified-view-source"><span>View Source</span></label>
+
+                        <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos"> 1</span></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</span><span id="L-2"><a href="#L-2"><span class="linenos"> 2</span></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+</span><span id="L-3"><a href="#L-3"><span class="linenos"> 3</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.animation</span><span class="w"> </span><span class="kn">import</span> <span class="n">FuncAnimation</span>
+</span><span id="L-4"><a href="#L-4"><span class="linenos"> 4</span></a>
+</span><span id="L-5"><a href="#L-5"><span class="linenos"> 5</span></a><span class="c1"># Parameters</span>
+</span><span id="L-6"><a href="#L-6"><span class="linenos"> 6</span></a><span class="n">n</span> <span class="o">=</span> <span class="mi">500</span>
+</span><span id="L-7"><a href="#L-7"><span class="linenos"> 7</span></a><span class="n">r_interact</span> <span class="o">=</span> <span class="mf">0.1</span>  <span class="c1"># Increased for visible swarming</span>
+</span><span id="L-8"><a href="#L-8"><span class="linenos"> 8</span></a><span class="n">v</span> <span class="o">=</span> <span class="mf">0.03</span>
+</span><span id="L-9"><a href="#L-9"><span class="linenos"> 9</span></a><span class="n">eta</span> <span class="o">=</span> <span class="mf">0.05</span>          <span class="c1"># Noise magnitude</span>
+</span><span id="L-10"><a href="#L-10"><span class="linenos">10</span></a><span class="n">dt</span> <span class="o">=</span> <span class="mi">1</span>
+</span><span id="L-11"><a href="#L-11"><span class="linenos">11</span></a>
+</span><span id="L-12"><a href="#L-12"><span class="linenos">12</span></a><span class="c1"># Initialize</span>
+</span><span id="L-13"><a href="#L-13"><span class="linenos">13</span></a><span class="n">pos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</span><span id="L-14"><a href="#L-14"><span class="linenos">14</span></a><span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+</span><span id="L-15"><a href="#L-15"><span class="linenos">15</span></a>
+</span><span id="L-16"><a href="#L-16"><span class="linenos">16</span></a><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+</span><span id="L-17"><a href="#L-17"><span class="linenos">17</span></a><span class="n">q</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="n">pos</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">pos</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+</span><span id="L-18"><a href="#L-18"><span class="linenos">18</span></a><span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</span><span id="L-19"><a href="#L-19"><span class="linenos">19</span></a><span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</span><span id="L-20"><a href="#L-20"><span class="linenos">20</span></a>
+</span><span id="L-21"><a href="#L-21"><span class="linenos">21</span></a><span class="k">def</span><span class="w"> </span><span class="nf">update_model</span><span class="p">():</span>
+</span><span id="L-22"><a href="#L-22"><span class="linenos">22</span></a>    <span class="k">global</span> <span class="n">pos</span><span class="p">,</span> <span class="n">theta</span>
+</span><span id="L-23"><a href="#L-23"><span class="linenos">23</span></a>    
+</span><span id="L-24"><a href="#L-24"><span class="linenos">24</span></a>    <span class="c1"># 1. Calculate all-to-all distances using broadcasting</span>
+</span><span id="L-25"><a href="#L-25"><span class="linenos">25</span></a>    <span class="c1"># dx.shape will be (n, n)</span>
+</span><span id="L-26"><a href="#L-26"><span class="linenos">26</span></a>    <span class="n">dx</span> <span class="o">=</span> <span class="n">pos</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span> <span class="o">-</span> <span class="n">pos</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
+</span><span id="L-27"><a href="#L-27"><span class="linenos">27</span></a>    <span class="n">dy</span> <span class="o">=</span> <span class="n">pos</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span> <span class="o">-</span> <span class="n">pos</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
+</span><span id="L-28"><a href="#L-28"><span class="linenos">28</span></a>    
+</span><span id="L-29"><a href="#L-29"><span class="linenos">29</span></a>    <span class="c1"># Apply periodic distance (closest path in a wrap-around box)</span>
+</span><span id="L-30"><a href="#L-30"><span class="linenos">30</span></a>    <span class="n">dx</span> <span class="o">=</span> <span class="p">(</span><span class="n">dx</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">%</span> <span class="mi">1</span> <span class="o">-</span> <span class="mf">0.5</span>
+</span><span id="L-31"><a href="#L-31"><span class="linenos">31</span></a>    <span class="n">dy</span> <span class="o">=</span> <span class="p">(</span><span class="n">dy</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">%</span> <span class="mi">1</span> <span class="o">-</span> <span class="mf">0.5</span>
+</span><span id="L-32"><a href="#L-32"><span class="linenos">32</span></a>    
+</span><span id="L-33"><a href="#L-33"><span class="linenos">33</span></a>    <span class="n">dist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">dx</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">dy</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</span><span id="L-34"><a href="#L-34"><span class="linenos">34</span></a>    
+</span><span id="L-35"><a href="#L-35"><span class="linenos">35</span></a>    <span class="c1"># 2. Find neighbors within interaction radius</span>
+</span><span id="L-36"><a href="#L-36"><span class="linenos">36</span></a>    <span class="n">adj</span> <span class="o">=</span> <span class="n">dist</span> <span class="o">&lt;</span> <span class="n">r_interact</span>
+</span><span id="L-37"><a href="#L-37"><span class="linenos">37</span></a>    
+</span><span id="L-38"><a href="#L-38"><span class="linenos">38</span></a>    <span class="c1"># 3. Average the angles of neighbors</span>
+</span><span id="L-39"><a href="#L-39"><span class="linenos">39</span></a>    <span class="n">new_theta</span> <span class="o">=</span> <span class="n">theta</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</span><span id="L-40"><a href="#L-40"><span class="linenos">40</span></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span><span id="L-41"><a href="#L-41"><span class="linenos">41</span></a>        <span class="n">neighbors_theta</span> <span class="o">=</span> <span class="n">theta</span><span class="p">[</span><span class="n">adj</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
+</span><span id="L-42"><a href="#L-42"><span class="linenos">42</span></a>        <span class="n">avg_sin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">neighbors_theta</span><span class="p">))</span>
+</span><span id="L-43"><a href="#L-43"><span class="linenos">43</span></a>        <span class="n">avg_cos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">neighbors_theta</span><span class="p">))</span>
+</span><span id="L-44"><a href="#L-44"><span class="linenos">44</span></a>        <span class="n">new_theta</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arctan2</span><span class="p">(</span><span class="n">avg_sin</span><span class="p">,</span> <span class="n">avg_cos</span><span class="p">)</span>
+</span><span id="L-45"><a href="#L-45"><span class="linenos">45</span></a>    
+</span><span id="L-46"><a href="#L-46"><span class="linenos">46</span></a>    <span class="c1"># 4. Add noise and update heading</span>
+</span><span id="L-47"><a href="#L-47"><span class="linenos">47</span></a>    <span class="n">theta</span> <span class="o">=</span> <span class="n">new_theta</span> <span class="o">+</span> <span class="n">eta</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+</span><span id="L-48"><a href="#L-48"><span class="linenos">48</span></a>    
+</span><span id="L-49"><a href="#L-49"><span class="linenos">49</span></a>    <span class="c1"># 5. Move particles</span>
+</span><span id="L-50"><a href="#L-50"><span class="linenos">50</span></a>    <span class="n">pos</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="n">v</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">dt</span>
+</span><span id="L-51"><a href="#L-51"><span class="linenos">51</span></a>    <span class="n">pos</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="n">v</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">dt</span>
+</span><span id="L-52"><a href="#L-52"><span class="linenos">52</span></a>    
+</span><span id="L-53"><a href="#L-53"><span class="linenos">53</span></a>    <span class="c1"># 6. Periodic Boundary Conditions</span>
+</span><span id="L-54"><a href="#L-54"><span class="linenos">54</span></a>    <span class="n">pos</span> <span class="o">=</span> <span class="n">pos</span> <span class="o">%</span> <span class="mi">1</span>
+</span><span id="L-55"><a href="#L-55"><span class="linenos">55</span></a>
+</span><span id="L-56"><a href="#L-56"><span class="linenos">56</span></a><span class="k">def</span><span class="w"> </span><span class="nf">animate</span><span class="p">(</span><span class="n">frame</span><span class="p">):</span>
+</span><span id="L-57"><a href="#L-57"><span class="linenos">57</span></a>    <span class="n">update_model</span><span class="p">()</span>
+</span><span id="L-58"><a href="#L-58"><span class="linenos">58</span></a>    <span class="n">q</span><span class="o">.</span><span class="n">set_offsets</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
+</span><span id="L-59"><a href="#L-59"><span class="linenos">59</span></a>    <span class="n">q</span><span class="o">.</span><span class="n">set_UVC</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
+</span><span id="L-60"><a href="#L-60"><span class="linenos">60</span></a>    <span class="k">return</span> <span class="n">q</span><span class="p">,</span>
+</span><span id="L-61"><a href="#L-61"><span class="linenos">61</span></a>
+</span><span id="L-62"><a href="#L-62"><span class="linenos">62</span></a><span class="c1">#if __name__ == &quot;__main__&quot;:</span>
+</span><span id="L-63"><a href="#L-63"><span class="linenos">63</span></a><span class="n">ani</span> <span class="o">=</span> <span class="n">FuncAnimation</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">animate</span><span class="p">,</span> <span class="n">frames</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">blit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="L-64"><a href="#L-64"><span class="linenos">64</span></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span></pre></div>
+
+
+            </section>
+                <section id="n">
+                    <div class="attr variable">
+            <span class="name">n</span>        =
+<span class="default_value">500</span>
+
+        
+    </div>
+    <a class="headerlink" href="#n"></a>
+    
+    
+
+                </section>
+                <section id="r_interact">
+                    <div class="attr variable">
+            <span class="name">r_interact</span>        =
+<span class="default_value">0.1</span>
+
+        
+    </div>
+    <a class="headerlink" href="#r_interact"></a>
+    
+    
+
+                </section>
+                <section id="v">
+                    <div class="attr variable">
+            <span class="name">v</span>        =
+<span class="default_value">0.03</span>
+
+        
+    </div>
+    <a class="headerlink" href="#v"></a>
+    
+    
+
+                </section>
+                <section id="eta">
+                    <div class="attr variable">
+            <span class="name">eta</span>        =
+<span class="default_value">0.05</span>
+
+        
+    </div>
+    <a class="headerlink" href="#eta"></a>
+    
+    
+
+                </section>
+                <section id="dt">
+                    <div class="attr variable">
+            <span class="name">dt</span>        =
+<span class="default_value">1</span>
+
+        
+    </div>
+    <a class="headerlink" href="#dt"></a>
+    
+    
+
+                </section>
+                <section id="pos">
+                    <div class="attr variable">
+            <span class="name">pos</span>        =
+<input id="pos-view-value" class="view-value-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+            <label class="view-value-button pdoc-button" for="pos-view-value"></label><span class="default_value">array([[9.56462478e-01, 9.02854352e-01],
+       [7.22196167e-02, 8.72683427e-01],
+       [9.77783003e-01, 8.28458415e-01],
+       [2.85151501e-01, 9.19875805e-01],
+       [5.94618564e-02, 7.33583413e-01],
+       [9.83817691e-01, 6.71963602e-01],
+       [9.30531313e-01, 8.38089238e-01],
+       [9.59453002e-01, 6.30330166e-01],
+       [2.06694054e-01, 8.73544667e-01],
+       [6.53650075e-02, 5.95841969e-01],
+       [1.00190891e-01, 4.58551869e-01],
+       [3.02157925e-03, 5.81975442e-01],
+       [3.45439907e-01, 8.64960892e-01],
+       [9.61065010e-01, 7.61000913e-01],
+       [3.79147803e-01, 7.57463202e-01],
+       [1.27512705e-01, 4.94957794e-01],
+       [2.52714870e-01, 9.45377189e-01],
+       [7.75947455e-02, 4.86857092e-01],
+       [8.99487235e-01, 6.69090082e-01],
+       [9.66487155e-02, 8.06398102e-01],
+       [4.20746990e-02, 7.26806515e-01],
+       [4.83278223e-02, 5.63065845e-01],
+       [9.87886376e-01, 6.50140087e-01],
+       [9.39465497e-01, 8.24821049e-01],
+       [6.93326817e-02, 6.96988613e-01],
+       [2.97916255e-02, 6.11801341e-01],
+       [1.75084861e-01, 9.45836855e-01],
+       [1.19235628e-02, 6.48750357e-01],
+       [9.85996602e-01, 6.31489220e-01],
+       [9.56065485e-01, 6.26095482e-01],
+       [2.82221424e-01, 8.27746919e-01],
+       [1.03018012e-01, 6.08161160e-01],
+       [9.68810788e-01, 6.33749766e-01],
+       [8.16423768e-01, 7.11447244e-01],
+       [3.95925744e-02, 5.84030034e-01],
+       [2.24564740e-01, 8.27524149e-01],
+       [2.15916145e-02, 6.81962768e-01],
+       [1.15751739e-02, 9.41217816e-01],
+       [9.80280023e-01, 6.72565445e-01],
+       [2.04512275e-01, 8.66859489e-01],
+       [9.48187231e-02, 9.06608285e-01],
+       [9.75769278e-01, 6.90631578e-01],
+       [9.46137570e-01, 5.98861216e-01],
+       [9.97143496e-02, 6.57620402e-01],
+       [9.66209410e-01, 6.13359234e-01],
+       [9.17929607e-01, 7.34241603e-01],
+       [9.18541441e-01, 7.84800436e-01],
+       [5.75569923e-03, 8.85277646e-01],
+       [5.05733680e-02, 8.11321110e-01],
+       [7.73589462e-02, 3.24456842e-01],
+       [1.15284322e-01, 7.13196369e-01],
+       [9.87504141e-01, 6.20151732e-01],
+       [9.55735940e-01, 7.11684675e-01],
+       [9.73657757e-01, 8.90105380e-01],
+       [1.54084106e-01, 7.07785574e-01],
+       [9.48230052e-01, 7.81645840e-01],
+       [9.94540870e-01, 7.42370910e-01],
+       [9.45932681e-02, 5.08738650e-01],
+       [2.04702457e-02, 7.60593874e-01],
+       [1.99457479e-01, 9.20599107e-01],
+       [1.19261420e-01, 7.50893185e-01],
+       [8.93489931e-01, 5.17893857e-01],
+       [9.88198556e-01, 6.63038717e-01],
+       [7.38372587e-02, 4.03777570e-01],
+       [9.80403400e-01, 8.53011871e-01],
+       [9.05994818e-03, 7.36241842e-01],
+       [8.94327462e-01, 7.59682262e-01],
+       [1.82118833e-02, 3.98609317e-01],
+       [2.18688258e-01, 7.91320533e-01],
+       [1.38228411e-01, 7.33569087e-01],
+       [7.83563694e-02, 5.74825882e-01],
+       [8.29387661e-03, 8.51097543e-01],
+       [1.34845186e-01, 7.84389966e-01],
+       [9.65187258e-02, 6.51842392e-01],
+       [9.90467037e-01, 4.73240833e-01],
+       [3.11146255e-02, 6.18417180e-01],
+       [7.72303681e-02, 7.70370613e-01],
+       [2.43217602e-01, 8.75224014e-01],
+       [1.57799073e-02, 5.19244911e-01],
+       [8.78427204e-01, 6.70633245e-01],
+       [1.41156830e-01, 7.60109277e-01],
+       [7.92550854e-01, 6.38710613e-01],
+       [4.03541436e-02, 4.96005213e-02],
+       [6.81320881e-02, 8.05569823e-01],
+       [9.55921160e-01, 6.49588993e-01],
+       [1.48594479e-01, 6.58800047e-01],
+       [2.28629243e-02, 7.88408391e-01],
+       [7.64900829e-02, 8.13174428e-01],
+       [8.61924677e-01, 8.68871251e-01],
+       [8.60100054e-02, 4.09033001e-01],
+       [2.43609436e-02, 9.82017222e-01],
+       [3.38428181e-02, 6.93891971e-01],
+       [9.29002062e-01, 6.81544004e-01],
+       [1.46384655e-01, 6.75476262e-01],
+       [8.64937498e-01, 6.83928522e-01],
+       [1.04385131e-01, 7.92409570e-01],
+       [7.41896694e-02, 4.24249923e-01],
+       [9.41878430e-02, 7.09861027e-01],
+       [3.44658361e-03, 6.34549271e-01],
+       [9.18599737e-01, 6.58166663e-01],
+       [4.72895293e-02, 9.02373519e-01],
+       [6.24089332e-02, 6.91822147e-01],
+       [1.62128794e-02, 5.61625265e-01],
+       [3.66877256e-02, 6.35074908e-01],
+       [9.37579812e-01, 6.14547496e-01],
+       [1.63492259e-01, 8.01494021e-01],
+       [2.79868542e-02, 6.09633883e-01],
+       [2.61320861e-01, 7.26882390e-01],
+       [9.30722087e-01, 5.81304260e-01],
+       [1.49183383e-01, 7.86804562e-01],
+       [1.18879338e-01, 4.11111934e-01],
+       [1.14527860e-01, 8.45383772e-01],
+       [7.26711695e-01, 8.05066964e-01],
+       [3.87242918e-02, 7.85823064e-01],
+       [9.59341122e-03, 6.03849239e-01],
+       [4.81354031e-02, 6.04821541e-01],
+       [9.90163819e-01, 7.35975986e-01],
+       [8.22722725e-02, 8.86039000e-01],
+       [9.99957187e-01, 9.19474584e-01],
+       [6.95741505e-01, 7.13870646e-01],
+       [9.80457532e-01, 6.57348731e-01],
+       [8.79863687e-01, 7.78978906e-01],
+       [9.68380186e-01, 8.42936709e-01],
+       [9.73164915e-01, 5.84265712e-01],
+       [8.46074763e-01, 9.52028492e-01],
+       [2.07888802e-01, 8.27715017e-01],
+       [5.11726307e-02, 5.18040805e-01],
+       [2.00812778e-02, 9.50863155e-01],
+       [9.69768415e-02, 7.80149454e-01],
+       [5.70621887e-02, 7.88222472e-01],
+       [1.47050270e-02, 8.04280810e-01],
+       [9.88828635e-01, 8.41933071e-01],
+       [4.08058121e-02, 6.27414082e-01],
+       [6.44065182e-02, 8.37028530e-01],
+       [9.04186863e-01, 8.57469374e-01],
+       [1.07543208e-01, 6.83899977e-01],
+       [6.55369127e-02, 5.81177261e-01],
+       [1.59464067e-01, 6.76552273e-01],
+       [8.95672349e-01, 7.72440626e-01],
+       [3.62604314e-02, 6.61817236e-01],
+       [2.14799043e-02, 6.66804563e-01],
+       [1.16497737e-01, 7.55905101e-01],
+       [1.46915926e-01, 7.29423024e-01],
+       [4.55140936e-02, 7.89151104e-01],
+       [3.39124774e-02, 6.12174897e-01],
+       [9.51066349e-02, 6.64474088e-01],
+       [5.70800405e-02, 6.35571890e-01],
+       [9.33705632e-02, 8.43509321e-01],
+       [9.89617500e-01, 5.59813879e-01],
+       [1.69933245e-02, 6.19492467e-01],
+       [8.85281623e-01, 6.70337359e-01],
+       [2.22928977e-01, 8.13433152e-01],
+       [3.89444689e-02, 3.90192509e-01],
+       [7.10521466e-01, 6.31765527e-01],
+       [9.60451953e-01, 5.93402691e-01],
+       [9.58583409e-01, 5.65675058e-01],
+       [2.52196652e-01, 7.77862497e-01],
+       [9.96338075e-01, 6.25277207e-01],
+       [4.77396006e-03, 6.33227700e-01],
+       [1.25210351e-03, 7.38706881e-01],
+       [1.88347472e-02, 6.20406359e-01],
+       [2.05915700e-01, 7.19339110e-01],
+       [9.57710488e-01, 6.55141217e-01],
+       [1.03709247e-02, 8.50896977e-01],
+       [9.99368391e-01, 5.92850686e-01],
+       [5.22621283e-02, 3.71145852e-01],
+       [1.82413399e-01, 5.70227778e-01],
+       [9.41441227e-01, 6.37106301e-01],
+       [1.41767252e-01, 8.59249466e-01],
+       [8.17709679e-02, 6.52734711e-01],
+       [9.19877545e-01, 5.02796832e-01],
+       [7.77312955e-02, 8.99213441e-01],
+       [1.11008754e-01, 5.07178210e-01],
+       [1.52109470e-01, 8.91425166e-01],
+       [9.30261884e-01, 6.62947308e-01],
+       [2.36802416e-01, 7.22134178e-01],
+       [9.60209956e-01, 7.75384257e-01],
+       [6.61673960e-03, 6.24979410e-01],
+       [3.67216771e-01, 6.89832388e-01],
+       [4.46075287e-02, 6.23031007e-01],
+       [8.91270081e-01, 6.58793402e-01],
+       [1.55566871e-01, 7.12824234e-01],
+       [8.99153121e-01, 5.17431761e-01],
+       [4.12042578e-02, 8.62676061e-01],
+       [9.86254918e-01, 6.21220673e-01],
+       [1.90855086e-01, 8.24351221e-01],
+       [1.83823000e-01, 4.43808053e-01],
+       [9.54110005e-01, 7.06296289e-01],
+       [6.31631027e-02, 6.24428936e-01],
+       [9.28049819e-01, 7.51197817e-01],
+       [9.61862066e-01, 5.82236100e-01],
+       [1.13827804e-01, 8.37786731e-01],
+       [1.57582154e-01, 8.26436169e-01],
+       [3.12697206e-02, 5.82043505e-01],
+       [1.23746388e-01, 4.37503305e-01],
+       [9.41873330e-01, 6.65982225e-01],
+       [9.95732746e-01, 6.01007865e-01],
+       [1.37760069e-01, 9.77225768e-01],
+       [9.48032789e-02, 4.48733423e-01],
+       [1.86279497e-02, 6.70204915e-01],
+       [9.40411218e-01, 6.48704791e-01],
+       [2.42343397e-01, 8.15882495e-01],
+       [3.76284931e-02, 8.71638028e-01],
+       [8.20630382e-01, 7.44461870e-01],
+       [1.02323781e-01, 5.17949681e-01],
+       [6.44997261e-02, 8.56436474e-01],
+       [5.16280028e-02, 7.17784124e-01],
+       [2.40422300e-01, 8.16178204e-01],
+       [5.22817766e-02, 8.21542994e-01],
+       [1.70149122e-01, 8.69745612e-01],
+       [3.23743332e-02, 6.23644703e-01],
+       [9.63891232e-01, 8.18540215e-01],
+       [9.64943158e-01, 6.30851209e-01],
+       [1.86575000e-02, 7.57756247e-01],
+       [9.86803373e-01, 5.94227380e-01],
+       [5.53476945e-02, 7.81899291e-01],
+       [1.85532308e-02, 7.01857469e-01],
+       [1.04965960e-01, 7.12343169e-01],
+       [9.76360974e-01, 6.68377712e-01],
+       [4.63360303e-02, 5.68355692e-01],
+       [1.88821262e-02, 6.67114199e-01],
+       [1.32177407e-01, 7.75104107e-01],
+       [9.31594213e-01, 9.95174758e-01],
+       [9.70387445e-03, 7.18745431e-01],
+       [2.48191650e-01, 6.50463605e-01],
+       [6.15971260e-02, 7.95154391e-01],
+       [3.24029007e-01, 7.78332830e-01],
+       [2.42470280e-01, 7.83052707e-01],
+       [9.63637709e-01, 4.50618764e-01],
+       [9.83302015e-01, 8.27038764e-01],
+       [9.56878255e-01, 8.89053974e-01],
+       [9.89595004e-01, 6.20820895e-01],
+       [9.87075060e-01, 8.91641604e-01],
+       [2.12483573e-01, 7.86357044e-01],
+       [9.20712488e-02, 9.73618179e-01],
+       [9.78614256e-01, 6.93935141e-01],
+       [2.36315313e-03, 7.52494200e-01],
+       [9.39776405e-01, 8.32038779e-01],
+       [7.67775636e-01, 6.68289370e-01],
+       [8.40527584e-02, 6.62254002e-01],
+       [9.11274377e-01, 4.48000023e-01],
+       [5.53431033e-02, 7.25078352e-01],
+       [1.03935549e-01, 6.24441768e-01],
+       [9.95861463e-02, 3.80611041e-01],
+       [9.77004324e-01, 2.82512274e-02],
+       [8.71391373e-02, 7.19291871e-01],
+       [2.10225219e-01, 7.04234546e-01],
+       [9.59789570e-01, 9.20681029e-01],
+       [2.78774898e-02, 6.91007634e-01],
+       [1.61077614e-01, 7.35678557e-01],
+       [7.39979683e-03, 8.28615242e-01],
+       [1.79941639e-01, 6.45873947e-01],
+       [4.08169539e-02, 7.10958449e-01],
+       [3.19130645e-02, 7.00471526e-01],
+       [6.50996702e-02, 7.70023206e-01],
+       [1.63286239e-01, 7.26558953e-01],
+       [9.84109907e-01, 7.10844928e-01],
+       [7.29206882e-01, 7.26430480e-01],
+       [2.18435893e-01, 6.91333261e-01],
+       [9.03554534e-01, 8.74324164e-01],
+       [4.84640384e-02, 6.62095062e-01],
+       [4.13111073e-03, 8.18909908e-01],
+       [5.12186938e-02, 8.38421845e-01],
+       [9.70698172e-01, 5.76850539e-01],
+       [2.16224406e-01, 8.54566749e-01],
+       [9.89177789e-01, 7.24799226e-01],
+       [2.09817474e-01, 9.13193543e-01],
+       [9.90842743e-01, 9.02269536e-01],
+       [1.18608117e-01, 5.02754105e-01],
+       [9.65098342e-01, 5.11770521e-01],
+       [9.37734010e-01, 8.62981341e-01],
+       [8.95129179e-01, 7.99538108e-01],
+       [8.88600149e-01, 4.55800289e-01],
+       [3.62118888e-02, 7.79192708e-01],
+       [8.91062447e-02, 6.46128746e-01],
+       [1.59511979e-02, 5.51572020e-01],
+       [1.67870182e-01, 8.24123422e-01],
+       [9.26314274e-02, 5.95488954e-01],
+       [1.83473683e-02, 5.64466405e-01],
+       [9.18807017e-01, 6.57915641e-01],
+       [9.81679165e-01, 4.89223255e-01],
+       [1.99604868e-01, 8.06737030e-01],
+       [1.37873393e-01, 6.10705190e-01],
+       [1.46421380e-01, 8.04164902e-01],
+       [8.72531930e-01, 7.59255069e-01],
+       [9.14500557e-01, 6.16621409e-01],
+       [5.10913200e-02, 4.23337534e-01],
+       [9.93116672e-01, 8.00646420e-01],
+       [8.94592399e-01, 6.58908650e-01],
+       [9.11805372e-01, 6.88328164e-01],
+       [5.65044597e-02, 4.61693196e-01],
+       [2.35381792e-02, 7.91916154e-01],
+       [4.00488442e-02, 4.34793263e-01],
+       [4.80892398e-02, 5.36460464e-01],
+       [1.48544115e-01, 8.13338874e-01],
+       [6.14823473e-02, 4.71652884e-01],
+       [9.72341874e-02, 4.46515640e-01],
+       [2.02262653e-01, 9.65878129e-01],
+       [9.98192544e-01, 7.22829600e-01],
+       [8.81258285e-01, 8.43855823e-01],
+       [8.39593421e-01, 9.02851776e-01],
+       [1.79720214e-01, 8.09370896e-01],
+       [9.69451270e-01, 6.02238473e-01],
+       [8.77742610e-01, 8.41699390e-01],
+       [9.58083280e-01, 6.53931220e-01],
+       [9.62860178e-01, 7.09639031e-01],
+       [9.69988026e-01, 8.23279400e-01],
+       [3.45270800e-01, 9.00447680e-01],
+       [2.00837136e-01, 8.40191446e-01],
+       [9.22644915e-01, 8.37442382e-01],
+       [9.56395964e-02, 4.69157428e-01],
+       [1.03498750e-01, 8.69798134e-01],
+       [9.45454424e-01, 6.08855681e-01],
+       [9.95450195e-01, 5.93919930e-01],
+       [6.50394952e-02, 5.30407655e-01],
+       [9.58541754e-02, 4.09214441e-01],
+       [9.83669716e-01, 7.40306622e-01],
+       [9.32470935e-01, 6.75017432e-01],
+       [1.41074027e-02, 5.29487338e-01],
+       [1.59276752e-01, 5.23891372e-01],
+       [9.89278378e-01, 5.93459456e-01],
+       [3.98076416e-02, 8.47537211e-01],
+       [9.56112459e-01, 8.58946631e-01],
+       [5.33624651e-02, 5.54117682e-01],
+       [1.71704366e-01, 7.30827447e-01],
+       [4.06605054e-02, 5.50752742e-01],
+       [1.01584921e-01, 7.21744718e-01],
+       [1.37582053e-01, 8.38959636e-01],
+       [9.78086709e-01, 7.15428821e-01],
+       [9.93584495e-01, 6.71322723e-01],
+       [6.78383015e-02, 8.18287892e-01],
+       [8.86773498e-01, 9.30634131e-01],
+       [4.47803135e-02, 6.51218471e-01],
+       [1.70819280e-01, 6.94829733e-01],
+       [1.84546639e-01, 9.17413056e-01],
+       [9.63173176e-01, 6.77341570e-01],
+       [9.90949161e-01, 6.28654081e-01],
+       [6.43473103e-02, 5.46252464e-01],
+       [2.73364829e-03, 6.79466050e-01],
+       [1.70995727e-01, 9.54450845e-01],
+       [1.37443298e-04, 6.69050924e-01],
+       [1.49906649e-01, 3.23079254e-01],
+       [1.10798705e-01, 7.95095621e-01],
+       [1.38383148e-01, 8.06356482e-01],
+       [9.99713327e-01, 9.19283905e-01],
+       [3.71448002e-02, 4.22788280e-01],
+       [5.02801611e-02, 7.06512736e-01],
+       [7.38493126e-02, 5.85880083e-01],
+       [8.38300371e-01, 7.43272767e-01],
+       [1.45391938e-01, 7.06697393e-01],
+       [2.45968541e-02, 7.44907955e-01],
+       [9.73721084e-01, 4.65158813e-01],
+       [7.22265776e-03, 6.43567326e-01],
+       [2.39234348e-02, 4.44680222e-01],
+       [9.50055847e-01, 7.25226673e-01],
+       [6.79522651e-01, 7.02053755e-01],
+       [9.74737350e-01, 6.64195414e-01],
+       [1.15901529e-01, 4.46508754e-01],
+       [3.95279872e-02, 7.13616113e-01],
+       [1.17944760e-01, 6.01841654e-01],
+       [4.42283826e-02, 4.18467022e-01],
+       [6.71209117e-04, 7.54361665e-01],
+       [5.32175938e-02, 4.43857449e-01],
+       [3.17564267e-02, 6.29162677e-01],
+       [9.81580606e-01, 6.38855588e-01],
+       [2.18618410e-01, 9.03401386e-01],
+       [9.34230590e-01, 8.36433747e-01],
+       [4.21382291e-02, 4.72228151e-01],
+       [1.00819184e-01, 8.05204355e-01],
+       [9.29754723e-01, 6.48518474e-01],
+       [1.40677563e-02, 7.32075313e-01],
+       [9.15193808e-01, 8.18261508e-01],
+       [1.10841831e-01, 9.72081740e-01],
+       [9.86977781e-01, 6.78831868e-01],
+       [1.39326534e-01, 7.33381889e-01],
+       [3.28930619e-01, 6.78254181e-01],
+       [1.45399530e-03, 4.55394934e-01],
+       [9.92082052e-01, 5.65169939e-01],
+       [9.75133408e-01, 7.87011493e-01],
+       [1.11623658e-01, 8.96608516e-01],
+       [8.92742753e-01, 6.39365155e-01],
+       [9.58335520e-01, 8.45420131e-01],
+       [1.47731207e-01, 7.81524122e-01],
+       [8.78265049e-01, 6.37273163e-01],
+       [1.63898874e-01, 7.49885939e-01],
+       [1.28471662e-01, 4.95210923e-01],
+       [1.04354478e-01, 7.99054634e-01],
+       [9.31563579e-01, 5.80386901e-01],
+       [6.01200818e-02, 5.80510404e-01],
+       [9.75882808e-01, 8.07196836e-01],
+       [2.81272755e-02, 6.85766311e-01],
+       [2.15074699e-01, 7.70656897e-01],
+       [9.94027593e-01, 4.18731088e-01],
+       [2.35661260e-01, 6.79365258e-01],
+       [9.77943566e-01, 6.89076175e-01],
+       [1.18909447e-01, 6.07661779e-01],
+       [2.00179739e-01, 7.90138937e-01],
+       [9.71575600e-01, 5.48636751e-01],
+       [8.14005575e-01, 7.88943720e-01],
+       [8.80800083e-01, 5.25723409e-01],
+       [8.85824962e-01, 7.36686440e-01],
+       [4.61702490e-02, 8.14543156e-01],
+       [1.25201048e-01, 4.66390418e-01],
+       [9.73109534e-02, 4.08398796e-01],
+       [9.85726735e-01, 6.91433352e-01],
+       [9.75129686e-01, 7.18209908e-01],
+       [9.80043487e-01, 5.89679191e-01],
+       [3.71815126e-01, 8.47811606e-01],
+       [1.99354568e-02, 8.49237169e-01],
+       [3.70131836e-02, 8.28669141e-01],
+       [9.78143627e-01, 7.98113076e-01],
+       [2.57229330e-02, 7.77894885e-01],
+       [2.77639537e-02, 6.34167564e-01],
+       [9.63462587e-01, 6.60319891e-01],
+       [3.64887514e-02, 9.30105601e-01],
+       [4.49940531e-02, 7.05931764e-01],
+       [3.40613838e-01, 6.73644917e-01],
+       [1.52802949e-01, 7.41668201e-01],
+       [1.13395911e-01, 7.24100137e-01],
+       [7.74931530e-02, 6.50914780e-01],
+       [9.74262709e-01, 7.09351996e-01],
+       [3.60758745e-02, 6.42401290e-01],
+       [9.97657225e-01, 6.38155080e-01],
+       [3.59982855e-02, 8.74946221e-01],
+       [1.06033896e-01, 5.06176388e-01],
+       [1.78763735e-01, 6.19572223e-01],
+       [9.49834306e-01, 5.95508281e-01],
+       [9.81820501e-01, 6.33643712e-01],
+       [8.80055136e-03, 6.71115347e-01],
+       [8.97989068e-01, 8.88380161e-01],
+       [9.42684119e-01, 5.90345409e-01],
+       [2.48618774e-02, 6.12428697e-01],
+       [1.07022707e-01, 5.89985188e-01],
+       [2.07110753e-01, 8.37269134e-01],
+       [8.58472266e-02, 8.67062166e-01],
+       [4.16799400e-02, 9.10560158e-01],
+       [7.93543903e-02, 5.34405878e-01],
+       [9.45017393e-02, 5.08568391e-01],
+       [9.95903017e-01, 6.98447782e-01],
+       [2.30992822e-01, 7.97903207e-01],
+       [9.79646570e-01, 5.69550591e-01],
+       [9.15980530e-01, 7.58345650e-01],
+       [5.26548307e-03, 4.73722589e-01],
+       [9.40675194e-01, 6.96145033e-01],
+       [9.33032090e-01, 8.00472719e-01],
+       [9.66989495e-01, 5.47356761e-01],
+       [1.15346290e-03, 7.90285629e-01],
+       [6.96218708e-03, 6.59460156e-01],
+       [8.90131743e-01, 7.70318274e-01],
+       [9.54835030e-01, 7.76479600e-01],
+       [9.82943961e-01, 8.11238598e-01],
+       [9.90599399e-01, 6.17230019e-01],
+       [1.01390962e-02, 7.15033053e-01],
+       [1.72590402e-01, 7.89622870e-01],
+       [9.81899465e-02, 8.74252621e-01],
+       [9.94168078e-01, 8.31273306e-01],
+       [1.25671505e-01, 8.40362179e-01],
+       [2.95318856e-02, 7.97298246e-01],
+       [2.83161984e-01, 8.24894308e-01],
+       [5.63568385e-02, 7.57354630e-01],
+       [4.55978089e-02, 7.88290683e-01],
+       [4.67075507e-02, 4.23130329e-01],
+       [2.73030249e-01, 6.61844892e-01],
+       [9.68998633e-01, 6.14035905e-01],
+       [9.17778779e-02, 7.74165148e-01],
+       [9.84614202e-01, 5.81925866e-01],
+       [4.99143306e-02, 5.97176610e-01],
+       [1.60178360e-01, 9.73353176e-01],
+       [1.53600553e-01, 8.41858814e-01],
+       [3.42567445e-02, 7.88863844e-01],
+       [1.44851689e-01, 5.14574158e-01],
+       [5.85142889e-02, 6.72666776e-01],
+       [9.86018774e-01, 8.92935733e-01],
+       [9.70867713e-01, 6.15055923e-01],
+       [9.12039746e-01, 5.81184636e-01],
+       [1.99394811e-01, 8.81968910e-01],
+       [9.67417319e-01, 6.10761065e-01],
+       [1.30571807e-01, 7.26351030e-01],
+       [6.47989554e-02, 7.99399914e-01],
+       [9.81305674e-01, 5.71046595e-01],
+       [5.43212397e-03, 7.20107073e-01],
+       [1.58101310e-01, 4.14938464e-01],
+       [9.16156740e-02, 4.84976507e-01],
+       [9.79565754e-01, 6.70297119e-01],
+       [1.85276680e-02, 6.26173591e-01],
+       [2.77572498e-01, 7.50651556e-01],
+       [9.66135986e-01, 3.69938846e-01],
+       [1.16439237e-03, 7.61648541e-01],
+       [8.63916837e-01, 8.22620335e-01],
+       [1.04623932e-01, 6.64247942e-01],
+       [9.89497128e-01, 7.16441372e-01],
+       [2.57779871e-02, 7.41567758e-01],
+       [1.70434437e-01, 8.02267806e-01],
+       [1.67092792e-01, 6.79782070e-01],
+       [1.23862140e-01, 7.72220729e-01],
+       [2.42135605e-01, 6.76029245e-01],
+       [5.55141007e-02, 4.16125613e-01],
+       [9.09795536e-01, 5.83716940e-01],
+       [1.81422246e-01, 8.62469921e-01],
+       [1.17240000e-01, 9.17607240e-01]])</span>
+
+        
+    </div>
+    <a class="headerlink" href="#pos"></a>
+    
+    
+
+                </section>
+                <section id="theta">
+                    <div class="attr variable">
+            <span class="name">theta</span>        =
+<input id="theta-view-value" class="view-value-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+            <label class="view-value-button pdoc-button" for="theta-view-value"></label><span class="default_value">array([-1.97289998, -1.91449398, -1.98045568, -1.83867447, -2.05757251,
+       -2.09470633, -1.86802421, -1.88334259, -2.07770756, -2.01766901,
+       -1.852986  , -1.91668918, -1.81871791, -2.17047445, -1.91720653,
+       -1.99544119, -2.10796278, -1.80359314, -2.0772856 , -1.9863213 ,
+       -1.89768292, -2.06148934, -2.04680293, -2.17848035, -2.07142393,
+       -2.07672797, -1.93367247, -2.14988907, -1.96601589, -1.94434193,
+       -1.98966454, -2.13844127, -2.06985409, -2.03467994, -2.05410876,
+       -1.93619564, -2.09592391, -2.04181191, -2.00842708, -1.85703058,
+       -1.9864125 , -1.93792755, -2.14426927, -2.15430245, -1.97186688,
+       -2.11995379, -2.13484638, -2.18902569, -1.911524  , -1.84860802,
+       -2.07960264, -2.13969792, -1.89583099, -1.97568085, -1.94189627,
+       -2.02019447, -1.93215147, -1.94183453, -1.88553787, -2.10229299,
+       -2.01969863, -2.02416574, -2.11725961, -2.06039527, -1.98598862,
+       -2.12034885, -2.00709547, -1.93292954, -1.8297002 , -1.91198679,
+       -2.12178292, -1.91592935, -1.9144331 , -2.00342359, -1.80278029,
+       -1.86488415, -2.07595025, -1.79688796, -2.08120089, -2.08008154,
+       -2.01342315, -1.90468039, -2.15960817, -2.07546403, -2.06290827,
+       -1.97344486, -2.13374108, -1.95566255, -2.07219919, -1.9683792 ,
+       -2.17620296, -2.15430317, -1.89487746, -2.02291636, -1.90307248,
+       -2.01354481, -2.00723591, -1.87006914, -2.07828075, -2.12484135,
+       -1.93902917, -2.04164759, -1.90063539, -1.92428786, -1.96867395,
+       -2.00478614, -1.87181557, -1.82975857, -1.84817286, -2.13764185,
+       -2.02686827, -1.97593886, -2.25494713, -2.13317092, -2.08255402,
+       -1.8418899 , -1.90381381, -2.07035763, -2.14260516, -2.1293894 ,
+       -1.9753884 , -2.07780629, -2.01839478, -1.94102867, -1.91177894,
+       -2.05450432, -1.88425119, -2.16443963, -1.94098824, -2.03086313,
+       -1.90954664, -2.12163707, -1.92383474, -2.11743494, -1.92473072,
+       -1.92496125, -1.96536083, -2.03083941, -2.05743671, -1.94935933,
+       -1.97958347, -2.13341359, -1.84044482, -2.10606016, -1.84611211,
+       -1.85959351, -2.00365359, -2.11220407, -1.8557544 , -2.00972551,
+       -2.02897861, -1.88654612, -1.88723502, -2.12005651, -2.1274864 ,
+       -1.89767818, -1.94363152, -2.06616583, -2.06009836, -2.13229785,
+       -2.041524  , -1.94422505, -2.06961085, -2.08386409, -2.01560702,
+       -2.05149591, -2.04508323, -1.96447262, -2.14757013, -2.14208595,
+       -2.04297915, -2.09745591, -1.97698492, -1.9009718 , -1.98125439,
+       -1.99541286, -1.90269999, -2.05252304, -1.79898817, -1.92897179,
+       -2.1343882 , -2.02222228, -1.94054365, -2.04050129, -1.92625196,
+       -2.08767546, -1.97478316, -2.01432305, -1.99543366, -1.96395764,
+       -1.96583625, -2.07043272, -1.87214291, -1.87581966, -2.07045111,
+       -1.95636183, -1.95660701, -1.8786565 , -1.82741235, -2.16435246,
+       -1.88274316, -1.95785629, -2.18384138, -2.09491441, -1.8748339 ,
+       -2.00837389, -2.13247327, -1.99527575, -1.97304262, -2.10055234,
+       -1.91053303, -2.17262288, -2.09586953, -1.92199134, -1.8706681 ,
+       -1.8909188 , -1.91568702, -2.14927768, -2.04526334, -2.00553063,
+       -2.02296102, -2.08514106, -2.16191174, -1.92485693, -1.96722063,
+       -2.03364696, -1.78373681, -1.8588739 , -2.04178144, -2.11966975,
+       -2.09339421, -2.13136013, -2.0226896 , -1.93945214, -2.17576189,
+       -1.90095832, -1.907666  , -2.12841126, -2.12251133, -2.02092422,
+       -1.85649356, -1.93260556, -2.05640629, -2.01653236, -1.99711696,
+       -2.03964851, -2.03404218, -2.01104466, -2.13780516, -2.11079195,
+       -1.94884767, -2.02872289, -1.92921919, -1.98483686, -2.0811044 ,
+       -2.09438967, -2.05382713, -2.21049326, -2.0879988 , -2.02965287,
+       -1.99803733, -2.01874773, -2.09182791, -1.8383436 , -2.02232196,
+       -2.11161003, -1.83224558, -2.13297172, -1.94570658, -2.05516215,
+       -2.0248087 , -1.9374967 , -2.15084742, -2.09975461, -2.04143264,
+       -2.02567377, -1.89325603, -2.14013416, -2.05257065, -2.16116823,
+       -1.90288254, -1.91924515, -2.03654977, -1.87607224, -2.15241845,
+       -2.02494247, -1.86609649, -1.94642163, -1.93849313, -1.92201194,
+       -1.80686486, -2.02923807, -2.02530512, -2.00805181, -2.14586285,
+       -1.94146669, -2.00886892, -1.97510093, -1.9892392 , -2.09443518,
+       -1.94209764, -1.95468396, -2.13428785, -2.11646454, -2.10777189,
+       -1.96409253, -2.02129776, -2.01639196, -2.05897096, -2.13393145,
+       -1.86775935, -1.91468485, -1.91522898, -2.14590287, -1.93781963,
+       -1.76515013, -1.98004578, -1.87535074, -1.85431845, -1.99262674,
+       -1.89847152, -2.06937037, -1.90255789, -1.94862972, -1.91255602,
+       -1.99437714, -1.9160635 , -1.86677516, -2.05216057, -1.89723199,
+       -1.92867207, -2.14080788, -2.07086471, -1.91676836, -1.88462437,
+       -1.96167694, -1.92898925, -1.96737359, -2.05720655, -1.82939125,
+       -1.90461696, -1.82115407, -2.05088728, -2.01435865, -1.94506259,
+       -1.8618356 , -1.9083797 , -2.03795819, -1.96905337, -1.90594052,
+       -2.12150657, -2.00288582, -2.11128424, -2.02907858, -1.97610351,
+       -2.2130035 , -2.03788011, -1.81773452, -2.09704648, -2.1235253 ,
+       -2.02785322, -1.94941195, -1.79473973, -1.94280412, -2.04948797,
+       -2.08727949, -1.93721721, -2.04791435, -2.13985644, -1.88876371,
+       -1.98645897, -1.91801848, -2.01749512, -1.95586653, -1.91344779,
+       -1.7966051 , -1.83375376, -1.84933423, -1.95528876, -2.16909844,
+       -2.00312348, -1.91363997, -1.91558304, -2.13774387, -2.12307817,
+       -2.04622024, -2.04214894, -1.90913313, -2.03637145, -2.0724531 ,
+       -1.87167065, -1.87722517, -1.78326196, -2.01760982, -2.14601682,
+       -2.02540692, -1.82891557, -1.98108852, -2.10778383, -2.10547069,
+       -1.88914198, -1.99419101, -1.81494935, -1.82123454, -1.87994081,
+       -2.16245924, -2.1251415 , -1.73719025, -1.89763174, -1.92794516,
+       -2.07981587, -2.14871168, -1.93767226, -1.97406252, -2.18213669,
+       -2.0874779 , -2.03478682, -1.89309906, -2.03932206, -2.05260161,
+       -2.12408541, -1.97785764, -1.90083196, -2.05712739, -1.92100891,
+       -1.92668631, -2.07006191, -1.90850424, -1.85857241, -2.17865169,
+       -1.86094761, -1.90704287, -2.08645607, -1.89024704, -2.00395838,
+       -1.97866733, -2.00641491, -2.06362818, -2.1637994 , -2.07930182,
+       -2.04470727, -1.96051194, -1.80638392, -1.90580852, -2.07799285,
+       -2.11543856, -2.17824304, -1.91823393, -2.17183749, -2.11319137,
+       -2.05688234, -1.9644802 , -2.12995717, -1.89338117, -1.98355677,
+       -2.04495388, -2.04910443, -1.90711391, -1.97735474, -1.86899431,
+       -2.06975453, -2.0041443 , -2.10104598, -2.08147715, -2.05314432,
+       -1.84600539, -2.0383442 , -2.08584866, -2.06297612, -1.90794788,
+       -1.94763884, -1.90298842, -1.94124693, -1.87883837, -1.95987273,
+       -1.95821214, -2.12639733, -2.11258551, -1.87595508, -2.05299127,
+       -2.02608007, -1.88391757, -2.00328989, -2.06384086, -1.98183998,
+       -2.06795619, -1.87349242, -2.18163926, -1.8993649 , -1.99543729,
+       -2.03102047, -1.87530586, -2.10154085, -1.96959587, -2.11943142,
+       -1.85742964, -2.05376086, -2.11862033, -2.07980944, -2.05306468])</span>
+
+        
+    </div>
+    <a class="headerlink" href="#theta"></a>
+    
+    
+
+                </section>
+                <section id="q">
+                    <div class="attr variable">
+            <span class="name">q</span>        =
+<span class="default_value">&lt;matplotlib.quiver.Quiver object&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#q"></a>
+    
+    
+
+                </section>
+                <section id="update_model">
+                            <input id="update_model-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">update_model</span><span class="signature pdoc-code condensed">(<span class="return-annotation">):</span></span>
+
+                <label class="view-source-button" for="update_model-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#update_model"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="update_model-22"><a href="#update_model-22"><span class="linenos">22</span></a><span class="k">def</span><span class="w"> </span><span class="nf">update_model</span><span class="p">():</span>
+</span><span id="update_model-23"><a href="#update_model-23"><span class="linenos">23</span></a>    <span class="k">global</span> <span class="n">pos</span><span class="p">,</span> <span class="n">theta</span>
+</span><span id="update_model-24"><a href="#update_model-24"><span class="linenos">24</span></a>    
+</span><span id="update_model-25"><a href="#update_model-25"><span class="linenos">25</span></a>    <span class="c1"># 1. Calculate all-to-all distances using broadcasting</span>
+</span><span id="update_model-26"><a href="#update_model-26"><span class="linenos">26</span></a>    <span class="c1"># dx.shape will be (n, n)</span>
+</span><span id="update_model-27"><a href="#update_model-27"><span class="linenos">27</span></a>    <span class="n">dx</span> <span class="o">=</span> <span class="n">pos</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span> <span class="o">-</span> <span class="n">pos</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
+</span><span id="update_model-28"><a href="#update_model-28"><span class="linenos">28</span></a>    <span class="n">dy</span> <span class="o">=</span> <span class="n">pos</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span> <span class="o">-</span> <span class="n">pos</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
+</span><span id="update_model-29"><a href="#update_model-29"><span class="linenos">29</span></a>    
+</span><span id="update_model-30"><a href="#update_model-30"><span class="linenos">30</span></a>    <span class="c1"># Apply periodic distance (closest path in a wrap-around box)</span>
+</span><span id="update_model-31"><a href="#update_model-31"><span class="linenos">31</span></a>    <span class="n">dx</span> <span class="o">=</span> <span class="p">(</span><span class="n">dx</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">%</span> <span class="mi">1</span> <span class="o">-</span> <span class="mf">0.5</span>
+</span><span id="update_model-32"><a href="#update_model-32"><span class="linenos">32</span></a>    <span class="n">dy</span> <span class="o">=</span> <span class="p">(</span><span class="n">dy</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">%</span> <span class="mi">1</span> <span class="o">-</span> <span class="mf">0.5</span>
+</span><span id="update_model-33"><a href="#update_model-33"><span class="linenos">33</span></a>    
+</span><span id="update_model-34"><a href="#update_model-34"><span class="linenos">34</span></a>    <span class="n">dist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">dx</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">dy</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</span><span id="update_model-35"><a href="#update_model-35"><span class="linenos">35</span></a>    
+</span><span id="update_model-36"><a href="#update_model-36"><span class="linenos">36</span></a>    <span class="c1"># 2. Find neighbors within interaction radius</span>
+</span><span id="update_model-37"><a href="#update_model-37"><span class="linenos">37</span></a>    <span class="n">adj</span> <span class="o">=</span> <span class="n">dist</span> <span class="o">&lt;</span> <span class="n">r_interact</span>
+</span><span id="update_model-38"><a href="#update_model-38"><span class="linenos">38</span></a>    
+</span><span id="update_model-39"><a href="#update_model-39"><span class="linenos">39</span></a>    <span class="c1"># 3. Average the angles of neighbors</span>
+</span><span id="update_model-40"><a href="#update_model-40"><span class="linenos">40</span></a>    <span class="n">new_theta</span> <span class="o">=</span> <span class="n">theta</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</span><span id="update_model-41"><a href="#update_model-41"><span class="linenos">41</span></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span><span id="update_model-42"><a href="#update_model-42"><span class="linenos">42</span></a>        <span class="n">neighbors_theta</span> <span class="o">=</span> <span class="n">theta</span><span class="p">[</span><span class="n">adj</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
+</span><span id="update_model-43"><a href="#update_model-43"><span class="linenos">43</span></a>        <span class="n">avg_sin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">neighbors_theta</span><span class="p">))</span>
+</span><span id="update_model-44"><a href="#update_model-44"><span class="linenos">44</span></a>        <span class="n">avg_cos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">neighbors_theta</span><span class="p">))</span>
+</span><span id="update_model-45"><a href="#update_model-45"><span class="linenos">45</span></a>        <span class="n">new_theta</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arctan2</span><span class="p">(</span><span class="n">avg_sin</span><span class="p">,</span> <span class="n">avg_cos</span><span class="p">)</span>
+</span><span id="update_model-46"><a href="#update_model-46"><span class="linenos">46</span></a>    
+</span><span id="update_model-47"><a href="#update_model-47"><span class="linenos">47</span></a>    <span class="c1"># 4. Add noise and update heading</span>
+</span><span id="update_model-48"><a href="#update_model-48"><span class="linenos">48</span></a>    <span class="n">theta</span> <span class="o">=</span> <span class="n">new_theta</span> <span class="o">+</span> <span class="n">eta</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+</span><span id="update_model-49"><a href="#update_model-49"><span class="linenos">49</span></a>    
+</span><span id="update_model-50"><a href="#update_model-50"><span class="linenos">50</span></a>    <span class="c1"># 5. Move particles</span>
+</span><span id="update_model-51"><a href="#update_model-51"><span class="linenos">51</span></a>    <span class="n">pos</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="n">v</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">dt</span>
+</span><span id="update_model-52"><a href="#update_model-52"><span class="linenos">52</span></a>    <span class="n">pos</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="n">v</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">dt</span>
+</span><span id="update_model-53"><a href="#update_model-53"><span class="linenos">53</span></a>    
+</span><span id="update_model-54"><a href="#update_model-54"><span class="linenos">54</span></a>    <span class="c1"># 6. Periodic Boundary Conditions</span>
+</span><span id="update_model-55"><a href="#update_model-55"><span class="linenos">55</span></a>    <span class="n">pos</span> <span class="o">=</span> <span class="n">pos</span> <span class="o">%</span> <span class="mi">1</span>
+</span></pre></div>
+
+
+    
+
+                </section>
+                <section id="animate">
+                            <input id="animate-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">animate</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">frame</span></span><span class="return-annotation">):</span></span>
+
+                <label class="view-source-button" for="animate-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#animate"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="animate-57"><a href="#animate-57"><span class="linenos">57</span></a><span class="k">def</span><span class="w"> </span><span class="nf">animate</span><span class="p">(</span><span class="n">frame</span><span class="p">):</span>
+</span><span id="animate-58"><a href="#animate-58"><span class="linenos">58</span></a>    <span class="n">update_model</span><span class="p">()</span>
+</span><span id="animate-59"><a href="#animate-59"><span class="linenos">59</span></a>    <span class="n">q</span><span class="o">.</span><span class="n">set_offsets</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
+</span><span id="animate-60"><a href="#animate-60"><span class="linenos">60</span></a>    <span class="n">q</span><span class="o">.</span><span class="n">set_UVC</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
+</span><span id="animate-61"><a href="#animate-61"><span class="linenos">61</span></a>    <span class="k">return</span> <span class="n">q</span><span class="p">,</span>
+</span></pre></div>
+
+
+    
+
+                </section>
+                <section id="ani">
+                    <div class="attr variable">
+            <span class="name">ani</span>        =
+<span class="default_value">&lt;matplotlib.animation.FuncAnimation object&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ani"></a>
+    
+    
+
+                </section>
+    </main>
+<script>
+    function escapeHTML(html) {
+        return document.createElement('div').appendChild(document.createTextNode(html)).parentNode.innerHTML;
+    }
+
+    const originalContent = document.querySelector("main.pdoc");
+    let currentContent = originalContent;
+
+    function setContent(innerHTML) {
+        let elem;
+        if (innerHTML) {
+            elem = document.createElement("main");
+            elem.classList.add("pdoc");
+            elem.innerHTML = innerHTML;
+        } else {
+            elem = originalContent;
+        }
+        if (currentContent !== elem) {
+            currentContent.replaceWith(elem);
+            currentContent = elem;
+        }
+    }
+
+    function getSearchTerm() {
+        return (new URL(window.location)).searchParams.get("search");
+    }
+
+    const searchBox = document.querySelector(".pdoc input[type=search]");
+    searchBox.addEventListener("input", function () {
+        let url = new URL(window.location);
+        if (searchBox.value.trim()) {
+            url.hash = "";
+            url.searchParams.set("search", searchBox.value);
+        } else {
+            url.searchParams.delete("search");
+        }
+        history.replaceState("", "", url.toString());
+        onInput();
+    });
+    window.addEventListener("popstate", onInput);
+
+
+    let search, searchErr;
+
+    async function initialize() {
+        try {
+            search = await new Promise((resolve, reject) => {
+                const script = document.createElement("script");
+                script.type = "text/javascript";
+                script.async = true;
+                script.onload = () => resolve(window.pdocSearch);
+                script.onerror = (e) => reject(e);
+                script.src = "../search.js";
+                document.getElementsByTagName("head")[0].appendChild(script);
+            });
+        } catch (e) {
+            console.error("Cannot fetch pdoc search index");
+            searchErr = "Cannot fetch search index.";
+        }
+        onInput();
+
+        document.querySelector("nav.pdoc").addEventListener("click", e => {
+            if (e.target.hash) {
+                searchBox.value = "";
+                searchBox.dispatchEvent(new Event("input"));
+            }
+        });
+    }
+
+    function onInput() {
+        setContent((() => {
+            const term = getSearchTerm();
+            if (!term) {
+                return null
+            }
+            if (searchErr) {
+                return `<h3>Error: ${searchErr}</h3>`
+            }
+            if (!search) {
+                return "<h3>Searching...</h3>"
+            }
+
+            window.scrollTo({top: 0, left: 0, behavior: 'auto'});
+
+            const results = search(term);
+
+            let html;
+            if (results.length === 0) {
+                html = `No search results for '${escapeHTML(term)}'.`
+            } else {
+                html = `<h4>${results.length} search result${results.length > 1 ? "s" : ""} for '${escapeHTML(term)}'.</h4>`;
+            }
+            for (let result of results.slice(0, 10)) {
+                let doc = result.doc;
+                let url = `../${doc.modulename.replaceAll(".", "/")}.html`;
+                if (doc.qualname) {
+                    url += `#${doc.qualname}`;
+                }
+
+                let heading;
+                switch (result.doc.kind) {
+                    case "function":
+                        if (doc.fullname.endsWith(".__init__")) {
+                            heading = `<span class="name">${doc.fullname.replace(/\.__init__$/, "")}</span>${doc.signature}`;
+                        } else {
+                            heading = `<span class="def">${doc.funcdef}</span> <span class="name">${doc.fullname}</span>${doc.signature}`;
+                        }
+                        break;
+                    case "class":
+                        heading = `<span class="def">class</span> <span class="name">${doc.fullname}</span>`;
+                        if (doc.bases)
+                            heading += `<wbr>(<span class="base">${doc.bases}</span>)`;
+                        heading += `:`;
+                        break;
+                    case "variable":
+                        heading = `<span class="name">${doc.fullname}</span>`;
+                        if (doc.annotation)
+                            heading += `<span class="annotation">${doc.annotation}</span>`;
+                        if (doc.default_value)
+                            heading += `<span class="default_value"> = ${doc.default_value}</span>`;
+                        break;
+                    default:
+                        heading = `<span class="name">${doc.fullname}</span>`;
+                        break;
+                }
+                html += `
+                        <section class="search-result">
+                        <a href="${url}" class="attr ${doc.kind}">${heading}</a>
+                        <div class="docstring">${doc.doc}</div>
+                        </section>
+                    `;
+
+            }
+            return html;
+        })());
+    }
+
+    if (getSearchTerm()) {
+        initialize();
+        searchBox.value = getSearchTerm();
+        onInput();
+    } else {
+        searchBox.addEventListener("focus", initialize, {once: true});
+    }
+
+    searchBox.addEventListener("keydown", e => {
+        if (["ArrowDown", "ArrowUp", "Enter"].includes(e.key)) {
+            let focused = currentContent.querySelector(".search-result.focused");
+            if (!focused) {
+                currentContent.querySelector(".search-result").classList.add("focused");
+            } else if (
+                e.key === "ArrowDown"
+                && focused.nextElementSibling
+                && focused.nextElementSibling.classList.contains("search-result")
+            ) {
+                focused.classList.remove("focused");
+                focused.nextElementSibling.classList.add("focused");
+                focused.nextElementSibling.scrollIntoView({
+                    behavior: "smooth",
+                    block: "nearest",
+                    inline: "nearest"
+                });
+            } else if (
+                e.key === "ArrowUp"
+                && focused.previousElementSibling
+                && focused.previousElementSibling.classList.contains("search-result")
+            ) {
+                focused.classList.remove("focused");
+                focused.previousElementSibling.classList.add("focused");
+                focused.previousElementSibling.scrollIntoView({
+                    behavior: "smooth",
+                    block: "nearest",
+                    inline: "nearest"
+                });
+            } else if (
+                e.key === "Enter"
+            ) {
+                focused.querySelector("a").click();
+            }
+        }
+    });
+</script></body>
+</html>
