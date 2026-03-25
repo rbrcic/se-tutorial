@@ -8,4 +8,5 @@ License-File: LICENSE
 Requires-Dist: numpy
 Requires-Dist: matplotlib
 Requires-Dist: click
+Requires-Dist: pytest
 Dynamic: license-file
