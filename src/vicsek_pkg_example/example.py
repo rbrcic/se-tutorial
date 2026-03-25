@@ -13,6 +13,19 @@ def test(num):
 
 
 def distance(p1, p2):
+    """Distance between two coordinates
+    Parameters
+    ----------
+    p1 : flt arr
+         Coordinate 1
+    p2 : flt arr
+         Coordinate 2
+    
+    Returns
+    -------
+    flt
+        Euclidean distance
+    """
     return np.sqrt(((p1 - p2) ** 2).sum())
 
 plt.rcParams['animation.embed_limit'] = 300
