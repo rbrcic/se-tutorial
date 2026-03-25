@@ -1,2 +1,1 @@
-__init__
 vicsek_pkg_example
