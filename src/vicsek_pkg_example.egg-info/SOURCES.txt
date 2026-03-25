@@ -2,6 +2,8 @@ LICENSE
 pyproject.toml
 src/vicsek_pkg_example/__init__.py
 src/vicsek_pkg_example/example.py
+src/vicsek_pkg_example/example_modified.py
+src/vicsek_pkg_example/test.py
 src/vicsek_pkg_example.egg-info/PKG-INFO
 src/vicsek_pkg_example.egg-info/SOURCES.txt
 src/vicsek_pkg_example.egg-info/dependency_links.txt

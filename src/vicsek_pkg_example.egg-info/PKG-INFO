@@ -7,4 +7,5 @@ Requires-Python: >=3.12
 License-File: LICENSE
 Requires-Dist: numpy
 Requires-Dist: matplotlib
+Requires-Dist: click
 Dynamic: license-file
