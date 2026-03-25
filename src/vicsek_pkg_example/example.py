@@ -11,6 +11,10 @@ def test(num):
     """Simple function that returns the CLI --num input"""
     click.echo(f"Input was this: {num}")
 
+
+def distance(p1, p2):
+    return np.sqrt(((p1 - p2) ** 2).sum())
+
 plt.rcParams['animation.embed_limit'] = 300
 
 class Vicsek:
@@ -20,10 +24,6 @@ class Vicsek:
         self.v = v # velocity
         self.dt = dt # time step
         self.eta = eta # angle
-    
-    @staticmethod
-    def distance(p1, p2):
-        return np.sqrt(((p1 - p2) ** 2).sum())
 
 vicsek = Vicsek(200,0.01,0.01,1,0.1)
 
@@ -58,7 +58,7 @@ def update_model():
 
             for j in range(vicsek.n):
                 if i != j:
-                    if Vicsek.distance(r[i], r[j]) < vicsek.d:
+                    if distance(r[i], r[j]) < vicsek.d:
                         theta_j = 2 * np.pi * theta[j]
                         sum_sin = sum_sin + np.sin(theta_j)
                         sum_cos = sum_cos + np.cos(theta_j)
@@ -120,14 +120,16 @@ def cont(frame):
     running = True
     print("Animation continued")
 
-# --- Create buttons ---
-ax_stop = plt.axes([0.65, 0.90, 0.15, 0.075])
-ax_continue = plt.axes([0.80, 0.90, 0.15, 0.075])
-btn_stop = Button(ax_stop, "Stop")
-btn_continue = Button(ax_continue, "Continue")
-btn_stop.on_clicked(stop)
-btn_continue.on_clicked(cont)
+if __name__ == "__main__":
+    
+    # --- Create buttons ---
+    ax_stop = plt.axes([0.65, 0.90, 0.15, 0.075])
+    ax_continue = plt.axes([0.80, 0.90, 0.15, 0.075])
+    btn_stop = Button(ax_stop, "Stop")
+    btn_continue = Button(ax_continue, "Continue")
+    btn_stop.on_clicked(stop)
+    btn_continue.on_clicked(cont)
+    ani = FuncAnimation(fig, animate, frames=200, interval=50, blit=True)
+    plt.show()
+    test()
 
-ani = FuncAnimation(fig, animate, frames=200, interval=50, blit=True)
-plt.show()
-test()

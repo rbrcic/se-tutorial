@@ -1,9 +1,9 @@
-import vicsek_pkg_example
-#from vicsek_pkg_example import Vicsek
+from vicsek_pkg_example.example import distance
+import numpy as np
 
 def test_main():
     assert(True)
 
 def test_distance():
-    assert(vicsek_pkg_example.Vicsek.distance([0,0],[0,0]) == 0)
-    assert(vicsek_pkg_example.Vicsek.distance([0,0],[0,1]) == 1)
+    assert(distance(np.array([0,0]), np.array([0,0])) == 0)
+    assert(distance(np.array([0,0]), np.array([0,1])) == 1)
