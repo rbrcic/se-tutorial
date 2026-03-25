@@ -1,5 +1,6 @@
 LICENSE
 pyproject.toml
+src/__init__.py
 src/vicsek_pkg_example/__init__.py
 src/vicsek_pkg_example/example.py
 src/vicsek_pkg_example/example_modified.py

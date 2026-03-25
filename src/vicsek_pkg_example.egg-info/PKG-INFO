@@ -9,4 +9,5 @@ Requires-Dist: numpy
 Requires-Dist: matplotlib
 Requires-Dist: click
 Requires-Dist: pytest
+Requires-Dist: pdoc
 Dynamic: license-file
